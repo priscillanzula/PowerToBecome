@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
@@ -22,33 +22,12 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
-// Contact form AJAX submission and thank you message
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    fetch(contactForm.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => response.json())
-      .then(data => {
-        if (data.success === "true") {
-          contactForm.reset();
-          formMessage.textContent = "Thank you for reaching out. We will get back to you within 3 days.";
-          formMessage.style.display = "block";
-        } else {
-          formMessage.textContent = "Oops! Something went wrong. Please try again.";
-          formMessage.style.display = "block";
-        }
-      }).catch(() => {
-        formMessage.textContent = "Oops! Something went wrong. Please try again.";
-        formMessage.style.display = "block";
-      });
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
 }
