@@ -10,6 +10,7 @@ body {
   color: #222; 
   background: #f7f9fb;
   line-height: 1.7;
+  padding-top: 70px; /* Prevent navbar overlap */
 }
 
 /* Headings */
@@ -20,11 +21,11 @@ h1, h2, h3 {
 
 h2 {
   margin-bottom: 1.2rem;
-  font-size: 2.1rem;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
 }
 
 /* Navbar */
@@ -73,9 +74,17 @@ h3 {
   border-bottom: 2px solid #FDB813;
 }
 
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #FDB813;
+  cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(120deg, rgba(0,78,146,0.85) 0%, rgba(253,184,19,0.7) 100%),
               url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') 
               no-repeat center center/cover;
@@ -84,26 +93,27 @@ h3 {
   align-items: center;
   text-align: center;
   color: #fff;
-  padding: 0 20px;
+  padding: 80px 20px 40px 20px;
   position: relative;
+  flex-direction: column;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: 12px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
 .hero .tagline {
-  font-size: 1.3rem;
+  font-size: clamp(0.9rem, 3.5vw, 1.3rem);
   color: #FDB813;
   margin-bottom: 12px;
   font-weight: 500;
 }
 
 .hero .vision {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
   margin-bottom: 26px;
   color: #fff;
   font-weight: 400;
@@ -200,53 +210,47 @@ section {
   font-weight: bold;
 }
 
-
+/* Mentorship Gallery */
 .mentorship-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);    
-    gap: 12px;
-    margin-top: 1.5rem;
-    /* justify-items: center;
-    align-items: center; */
-    max-width: 360px; 
-    margin-left: auto;
-    margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 1.5rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
 .mentorship-gallery img {
-    width: 220px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
 }
 
 .mentorship-gallery img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-
-/* ...existing code... */
 
 @media (min-width: 800px) {
-    .mentorship {
-        display: flex;
-        gap: 2rem;
-        align-items: flex-start;
-    }
-    .mentorship .card {
-        flex: 2;
-    }
-    .mentorship-gallery {
-        flex: 1;
-        
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        height: auto;
-    }
+  .mentorship {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .mentorship .card {
+    flex: 2;
+  }
+  .mentorship-gallery {
+    flex: 1;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: auto;
+  }
 }
+
 /* Partners List */
 .partner-list {
   list-style: none;
@@ -373,18 +377,29 @@ footer {
     padding: 1rem 0.5rem;
   }
   .nav-links {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+    width: 100%;
+    background: #222;
+    padding: 1rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
   }
   .footer-content {
     font-size: 0.95rem;
   }
   .contact form {
     width: 100%;
-    padding: 0;
+    padding: 20px 12px;
   }
   .mentee-cards {
     flex-direction: column;
     gap: 16px;
-  }}
+  }
+}

@@ -22,33 +22,36 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
-// Contact form AJAX submission and thank you message
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
+
     const formData = new FormData(contactForm);
+
     fetch(contactForm.action, {
       method: "POST",
       body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => response.json())
-      .then(data => {
-        if (data.success === "true") {
-          contactForm.reset();
-          formMessage.textContent = "Thank you for reaching out. We will get back to you within 3 days.";
-          formMessage.style.display = "block";
-        } else {
-          formMessage.textContent = "Oops! Something went wrong. Please try again.";
-          formMessage.style.display = "block";
-        }
-      }).catch(() => {
-        formMessage.textContent = "Oops! Something went wrong. Please try again.";
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        contactForm.reset();
+        // Option 1: Show inline message
+        formMessage.textContent = "✅ Thank you! Your message has been sent.";
         formMessage.style.display = "block";
-      });
+
+        // Option 2: Redirect to thank-you page
+        // window.location.href = "thankyou.html"; // same tab
+        // window.open("thankyou.html", "_blank"); // new tab
+      } else {
+        formMessage.textContent = "⚠️ Something went wrong. Please try again.";
+        formMessage.style.display = "block";
+      }
+    }).catch(() => {
+      formMessage.textContent = "⚠️ Network error. Please try again.";
+      formMessage.style.display = "block";
+    });
   });
 }
