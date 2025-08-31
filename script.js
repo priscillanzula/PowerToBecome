@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const cards = document.querySelectorAll('.card');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
@@ -22,36 +22,12 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(contactForm);
-
-    fetch(contactForm.action, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        contactForm.reset();
-        // Option 1: Show inline message
-        formMessage.textContent = "✅ Thank you! Your message has been sent.";
-        formMessage.style.display = "block";
-
-        // Option 2: Redirect to thank-you page
-        // window.location.href = "thankyou.html"; // same tab
-        // window.open("thankyou.html", "_blank"); // new tab
-      } else {
-        formMessage.textContent = "⚠️ Something went wrong. Please try again.";
-        formMessage.style.display = "block";
-      }
-    }).catch(() => {
-      formMessage.textContent = "⚠️ Network error. Please try again.";
-      formMessage.style.display = "block";
-    });
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
 }

@@ -385,6 +385,12 @@ footer {
     background: #222;
     padding: 1rem;
   }
+  .nav-links a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
   .nav-links.active {
     display: flex;
   }
@@ -403,3 +409,13 @@ footer {
     gap: 16px;
   }
 }
+.founder img,
+.mentorship-gallery img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
