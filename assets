@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 
 # SVG contents from earlier messages (logo, hero, dots)
@@ -52,3 +53,59 @@ for name, content in files.items():
         f.write(content)
 
 assets_dir
+=======
+import os
+
+# SVG contents from earlier messages (logo, hero, dots)
+logo_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F4A261"/>
+      <stop offset="100%" stop-color="#0E3A5B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#g)" opacity="0.2" stroke="#0E3A5B" stroke-width="2"/>
+  <path d="M60 20l10 18H50L60 20zm0 80l-10-18h20L60 100z" fill="#F4A261"/>
+  <path d="M28 60l18-10v20L28 60zm64 0l-18 10V50l18 10z" fill="#0E3A5B"/>
+  <circle cx="60" cy="60" r="8" fill="#2B2B2B"/>
+</svg>"""
+
+hero_svg = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#F4F1DE"/>
+  <circle cx="120" cy="150" r="80" fill="#E76F51" opacity="0.8"/>
+  <rect x="200" y="70" width="150" height="160" rx="15" fill="#2A9D8F" opacity="0.8"/>
+  <path d="M50 250h300v20H50z" fill="#264653"/>
+  <text x="200" y="160" font-size="24" text-anchor="middle" fill="#fff">Behold ~ Become</text>
+</svg>"""
+
+dots_svg = """<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 10 10">
+  <g fill="#ffffff">
+    <circle cx="1" cy="1" r="0.5"/>
+    <circle cx="5" cy="1" r="0.5"/>
+    <circle cx="9" cy="1" r="0.5"/>
+    <circle cx="1" cy="5" r="0.5"/>
+    <circle cx="5" cy="5" r="0.5"/>
+    <circle cx="9" cy="5" r="0.5"/>
+    <circle cx="1" cy="9" r="0.5"/>
+    <circle cx="5" cy="9" r="0.5"/>
+    <circle cx="9" cy="9" r="0.5"/>
+  </g>
+</svg>"""
+
+# File paths in /mnt/data/assets
+assets_dir = "/mnt/data/assets"
+os.makedirs(assets_dir, exist_ok=True)
+
+files = {
+    "logo.svg": logo_svg,
+    "hero-illustration.svg": hero_svg,
+    "dots.svg": dots_svg,
+}
+
+# Write each file
+for name, content in files.items():
+    with open(os.path.join(assets_dir, name), "w") as f:
+        f.write(content)
+
+assets_dir
+>>>>>>> b17435728370130a764ba3270e7fc8593ef3c315
