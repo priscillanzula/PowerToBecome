@@ -48,9 +48,10 @@ h3 {
 
 /* LOGO STYLING */
 .logo img {
-    width: 250px;        /* adjust as needed */
+    width: 200px;        /* adjust as needed */
     height: auto;
     display: block;
+  max-height: 45px;
     object-fit: contain;
 }
 
