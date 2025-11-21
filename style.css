@@ -11,16 +11,17 @@ body {
   color: #222; 
   background: #f7f9fb;
   line-height: 1.7;
-  padding-top: 70px; /* Prevent navbar overlap */
+  padding-top: 80px; /* Prevent navbar overlap */
 }
 
 /* Headings */
 h1, h2, h3 {
-  color: #004E92; 
+  color: #920088; 
   letter-spacing: 1px;
 }
 
 h2 {
+  
   margin-bottom: 1.2rem;
   font-size: clamp(1.5rem, 4vw, 2.1rem);
 }
@@ -31,17 +32,26 @@ h3 {
 
 /* Navbar */
 .navbar {
-  background: #222; 
-  color: #FDB813; 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,78,146,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;      /* stays at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;    /* or transparent */
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,78,146,0.06);
+}
+  
+
+/* LOGO STYLING */
+.logo img {
+    width: 250px;        /* adjust as needed */
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .navbar .logo {
@@ -61,7 +71,7 @@ h3 {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #8e0880;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.05rem;
@@ -299,8 +309,8 @@ section {
   transition: border 0.2s;
 }
 
-.contact input:focus, 
-.contact textarea:focus {
+.contact input:purpose, 
+.contact textarea:purpose {
   border: 1.5px solid #FDB813;
   outline: none;
 }
@@ -376,28 +386,97 @@ footer {
   }
   .navbar {
     padding: 1rem 0.5rem;
+    height: 70px;
   }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    width: 100%;
-    background: #222;
-    padding: 1rem;
-  }
-  .nav-links a {
-  display: block;
-  width: 100%;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-  .nav-links.active {
-    display: flex;
-  }
+  
+  /* Updated Mobile Navigation */
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color:  #8e0880;
+    cursor: pointer;
+    z-index: 1001;
   }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-links.active {
+    transform: translateX(0);
+  }
+  
+  .nav-links li {
+    margin-left: 0;
+    width: auto;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    display: block;
+    color: rgb(106, 13, 104);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 15px 40px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-links a:hover {
+    color: #FDB813;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #FDB813;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(253, 184, 19, 0.3);
+  }
+  
+  /* Close button style */
+  .nav-links::before {
+    content: '✕';
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links::before:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #FDB813;
+  }
+  
   .footer-content {
     font-size: 0.95rem;
   }
@@ -409,6 +488,22 @@ footer {
     flex-direction: column;
     gap: 16px;
   }
+  .inspirational-quote {
+    padding: 20px 15px;
+    margin: 25px 0;
+  }
+  .inspirational-quote p {
+    font-size: 1.1rem;
+  }
+  .founder p {
+    text-align: left;
+    padding: 0 10px;
+  }
+  
+  /* Prevent body scroll when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 .founder img,
 .mentorship-gallery img {
@@ -419,4 +514,30 @@ footer {
   margin: 0 auto;
   object-fit: cover;
 }
+/* Inspirational Quote Styling */
+.inspirational-quote {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #FDB813;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,78,146,0.07);
+}
+
+.inspirational-quote p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #004E92;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+  font-style: normal;
+}
+
+.inspirational-quote i {
+  /* color: #920088; */
+  font-style: italic;
+}
+
 
