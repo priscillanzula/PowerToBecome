@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowBec School</title>
+    <link rel="stylesheet" href="powbec.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="school-header">
+            <h1>Powbec School</h1>
+            <p>PowerCode.Become!</p>
+            <!-- <button class="enroll-cta-btn" onclick="openEnrollmentModal()">Enroll Now</button> -->
+        </header>
+
+        <!-- Courses Section -->
+        <section class="courses-section">
+            <h2>Available Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3>Digital Literacy Basics</h3>
+                    <p>Learn essential computer skills, internet usage, and basic software applications.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Beginner</p>
+                        <p><strong>Duration:</strong> 4 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🌐</div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript and modern web development frameworks.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Intermediate</p>
+                        <p><strong>Duration:</strong> 8 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📱</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Social media marketing, content creation, and online business strategies.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Beginner/Intermediate</p>
+                        <p><strong>Duration:</strong> 6 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Learn design principles, Canva, and basic Adobe Creative Suite tools.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Beginner</p>
+                        <p><strong>Duration:</strong> 5 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <p>Excel, basic statistics, and data visualization techniques.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Intermediate</p>
+                        <p><strong>Duration:</strong> 6 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">📲</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Create mobile applications for Android and iOS platforms.</p>
+                    <div class="course-details">
+                        <p><strong>Level:</strong> Advanced</p>
+                        <p><strong>Duration:</strong> 10 weeks</p>
+                    </div>
+                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bottom-cta">
+            <h2>Ready to Start Your Digital Journey?</h2>
+            <p>Join hundreds of rural youth who are transforming their lives through technology</p>
+            <button class="enroll-cta-btn large" onclick="openEnrollmentModal()">Enroll Now</button>
+        </section>
+    </div>
+
+    <!-- Enrollment Modal -->
+    <div id="enrollmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Enroll in PowBec School</h2>
+                <!-- <span class="close-btn" onclick="closeEnrollmentModal()">&times;</span> -->
+            </div>
+            <div class="modal-body">
+                <form id="enrollmentForm" class="enrollment-form" action="https://formspree.io/f/mrbakyne"
+                    method="POST">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age *</label>
+                        <input type="number" id="age" name="age" class="form-control" min="10" max="25" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location/Village *</label>
+                        <input type="text" id="location" name="location" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Select Course *</label>
+                        <select id="course" name="course" class="form-control" required>
+                            <option value="">Choose a course...</option>
+                            <option value="Digital Literacy Basics">Digital Literacy Basics</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Data Analysis">Data Analysis</option>
+                            <option value="Mobile App Development">Mobile App Development</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studyLevel">Current Level of Study *</label>
+                        <select id="studyLevel" name="studyLevel" class="form-control" required>
+                            <option value="">Select your level...</option>
+                            <option value="Primary School">Primary School</option>
+                            <option value="Secondary School">Secondary School</option>
+                            <option value="College/University">College/University</option>
+                            <option value="Not in School">Not in School</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Mode of Study *</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="online" name="studyMode" value="Online" required>
+                                <label for="online">Online</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="inperson" name="studyMode" value="In-Person" required>
+                                <label for="inperson">In-Person</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="both" name="studyMode" value="Both" required>
+                                <label for="both">Both</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Information (Optional)</label>
+                        <textarea id="message" name="message" class="form-control" rows="3"
+                            placeholder="Tell us about your goals or any specific needs..."></textarea>
+                    </div>
+
+                    <input type="hidden" name="_subject" value="New PowBec School Enrollment">
+                    <input type="hidden" name="_replyto" value="danielpriscilla61@gmail.com">
+
+                    <div id="formMessage" class="form-message"></div>
+
+                    <button type="submit" class="submit-btn">Submit Enrollment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="powbec.js"></script>
+</body>
+
+</html>
