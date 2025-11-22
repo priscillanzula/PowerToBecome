@@ -23,7 +23,7 @@ body {
 .school-header {
     text-align: center;
     padding: 2rem 1rem;
-    color:  #8e0880;
+    color: #8e0880;
 }
 
 .school-header h1 {
@@ -49,7 +49,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .enroll-cta-btn:hover {
@@ -61,8 +61,9 @@ body {
     padding: 10px 20px;
     font-size: 1.2rem;
 }
+
 .back-to-main-btn {
-    color:  #667eea;
+    color: #667eea;
     text-decoration: none;
     padding: 10px 20px;
     border: none;
@@ -71,23 +72,15 @@ body {
     transition: all 0.3s ease;
     font-weight: bold;
     font-size: 1.2rem;
+    background: white;
 }
 
 .back-to-main-btn:hover {
-    background: white;
-    color: #667eea;
+    background: #667eea;
+    color: white;
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .header-buttons {
-        flex-direction: column;
-    }
-    
-    .back-to-main-btn {
-        margin-top: 1rem;
-    }
-}
 /* Courses Section */
 .courses-section {
     background: white;
@@ -102,6 +95,13 @@ body {
     margin-bottom: 2rem;
     color: #333;
     font-size: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 .courses-grid {
@@ -158,8 +158,8 @@ body {
     font-size: 0.9rem;
 }
 
-.course-enroll-btn {
-    background: #667eea;
+.learn-more-btn {
+    background: #0e5ea9;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -168,10 +168,11 @@ body {
     transition: all 0.3s ease;
     font-weight: bold;
     margin-top: auto;
+    width: 100%;
 }
 
-.course-enroll-btn:hover {
-    background: #5a6fd8;
+.learn-more-btn:hover {
+    background: #d1d93d;
     transform: translateY(-2px);
 }
 
@@ -222,6 +223,11 @@ body {
     animation: modalSlideIn 0.3s ease-out;
 }
 
+.course-modal-content {
+    max-width: 800px;
+    max-height: 90vh;
+}
+
 @keyframes modalSlideIn {
     from {
         opacity: 0;
@@ -234,7 +240,7 @@ body {
 }
 
 .modal-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #ad16bb 0%, #dcde72 100%);
     color: white;
     padding: 1.5rem;
     border-radius: 15px 15px 0 0;
@@ -252,6 +258,15 @@ body {
     font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
+    color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-btn:hover {
@@ -260,6 +275,225 @@ body {
 
 .modal-body {
     padding: 2rem;
+}
+
+/* Course Details Modal Styles */
+.course-details-content {
+    padding: 1rem 0;
+}
+
+.course-description {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.course-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.highlight-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.highlight-card .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.highlight-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.course-modules {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.course-modules h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+}
+
+.module-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.module-list li:before {
+    content: "✓";
+    color: #cd23ca;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.module-list li:last-child {
+    border-bottom: none;
+}
+
+.course-outcomes {
+    background: #e8f5e8;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.course-outcomes h4 {
+    color: #6c0b93;
+    margin-bottom: 1rem;
+}
+
+.outcomes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.outcomes-list li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.outcomes-list li:before {
+    content: "🎯";
+    margin-right: 10px;
+}
+
+.course-applications {
+    background:#f7f6f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.course-applications h4 {
+    color: #720a7a;
+    margin-bottom: 1rem;
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.application-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-2px);
+}
+
+.app-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.application-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.career-opportunities {
+    background: #f7f6f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.career-opportunities h4 {
+    color: #8f0783;
+    margin-bottom: 1rem;
+}
+
+.career-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.career-tag {
+    background: #1e65c3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.requirements {
+    background: #f7f6f5;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+}
+
+.requirements h4 {
+    color: #860b8f;
+    margin-bottom: 1rem;
+}
+
+.course-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.enroll-from-details {
+    background: linear-gradient(135deg, #223db5 0%, #b31ab3 100%);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.enroll-from-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 /* Form Styles */
@@ -343,22 +577,70 @@ body {
     transform: none;
 }
 
-.form-message {
+/* Success Message Styles */
+.success-message {
     text-align: center;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    display: none;
-    font-weight: bold;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #d4edda;
 }
 
-.success {
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.success-message h3 {
+    color: #2ccf4f;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.success-message p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.success-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.success-btn {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.outline-btn {
+    background: transparent;
+    border: 2px solid #667eea;
+    color: #667eea;
+}
+
+.outline-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Form Message Styles */
+.form-message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-message.success {
     background: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-.error {
+.form-message.error {
     background: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
@@ -393,7 +675,8 @@ body {
         padding: 1.2rem;
     }
     
-    .modal-content {
+    .modal-content,
+    .course-modal-content {
         width: 95%;
         margin: 5% auto;
     }
@@ -410,6 +693,26 @@ body {
     .enroll-cta-btn {
         padding: 10px 20px;
         font-size: 1rem;
+    }
+    
+    .course-actions {
+        flex-direction: column;
+    }
+    
+    .applications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .success-buttons {
+        flex-direction: column;
+    }
+    
+    .module-list li {
+        font-size: 0.9rem;
     }
 }
 
@@ -441,6 +744,19 @@ body {
     
     .form-control {
         padding: 10px 12px;
+    }
+    
+    .course-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .application-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .career-tags {
+        justify-content: center;
     }
 }
 

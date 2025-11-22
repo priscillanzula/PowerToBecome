@@ -20,73 +20,138 @@
         <!-- Courses Section -->
         <section class="courses-section">
             <h2>Available Courses</h2>
+            <p class="section-subtitle">Choose from our comprehensive digital skills training programs</p>
             <div class="courses-grid">
+                <!-- Computer Literacy -->
                 <div class="course-card">
                     <div class="course-icon">💻</div>
-                    <h3>Digital Literacy Basics</h3>
-                    <p>Learn essential computer skills, internet usage, and basic software applications.</p>
+                    <h3>Computer Literacy</h3>
+                    <p>Master essential computer skills for everyday use and professional development.</p>
                     <div class="course-details">
-                        <p><strong>Level:</strong> Beginner</p>
                         <p><strong>Duration:</strong> 4 weeks</p>
                     </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                    <button class="learn-more-btn" onclick="openCourseModal('computer-literacy')">Learn More</button>
                 </div>
 
+                <!-- Web Development -->
                 <div class="course-card">
                     <div class="course-icon">🌐</div>
                     <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript and modern web development frameworks.</p>
+                    <p>Build modern, responsive websites from scratch using industry-standard technologies.</p>
                     <div class="course-details">
-                        <p><strong>Level:</strong> Intermediate</p>
-                        <p><strong>Duration:</strong> 8 weeks</p>
+
+                        <p><strong>Duration:</strong> 10 weeks</p>
                     </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                    <button class="learn-more-btn" onclick="openCourseModal('web-development')">Learn More</button>
                 </div>
 
+                <!-- Python Programming -->
                 <div class="course-card">
-                    <div class="course-icon">📱</div>
-                    <h3>Digital Marketing</h3>
-                    <p>Social media marketing, content creation, and online business strategies.</p>
+                    <div class="course-icon">🐍</div>
+                    <h3>Python Programming</h3>
+                    <p>Learn Python from basics to advanced concepts for various applications.</p>
                     <div class="course-details">
-                        <p><strong>Level:</strong> Beginner/Intermediate</p>
+
                         <p><strong>Duration:</strong> 6 weeks</p>
                     </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                    <button class="learn-more-btn" onclick="openCourseModal('python-programming')">Learn More</button>
                 </div>
 
-                <div class="course-card">
-                    <div class="course-icon">🎨</div>
-                    <h3>Graphic Design</h3>
-                    <p>Learn design principles, Canva, and basic Adobe Creative Suite tools.</p>
-                    <div class="course-details">
-                        <p><strong>Level:</strong> Beginner</p>
-                        <p><strong>Duration:</strong> 5 weeks</p>
-                    </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
-                </div>
-
+                <!-- Data Analysis -->
                 <div class="course-card">
                     <div class="course-icon">📊</div>
                     <h3>Data Analysis</h3>
-                    <p>Excel, basic statistics, and data visualization techniques.</p>
+                    <p>Transform raw data into meaningful insights using powerful analytical tools.</p>
                     <div class="course-details">
-                        <p><strong>Level:</strong> Intermediate</p>
-                        <p><strong>Duration:</strong> 6 weeks</p>
+
+                        <p><strong>Duration:</strong> 8 weeks</p>
                     </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                    <button class="learn-more-btn" onclick="openCourseModal('data-analysis')">Learn More</button>
                 </div>
 
+                <!-- Data Science & Machine Learning -->
+                <div class="course-card">
+                    <div class="course-icon">🤖</div>
+                    <h3>Data Science & ML</h3>
+                    <p>Dive into machine learning and predictive analytics with Python.</p>
+                    <div class="course-details">
+
+                        <p><strong>Duration:</strong> 12 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('data-science-ml')">Learn More</button>
+                </div>
+
+                <!-- Artificial Intelligence -->
+                <div class="course-card">
+                    <div class="course-icon">🧠</div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Explore the fundamentals of AI and its real-world applications.</p>
+                    <div class="course-details">
+
+                        <p><strong>Duration:</strong> 10 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('artificial-intelligence')">Learn
+                        More</button>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="course-card">
+                    <div class="course-icon">📱</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Master online marketing strategies for business growth and brand building.</p>
+                    <div class="course-details">
+
+                        <p><strong>Duration:</strong> 6 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('digital-marketing')">Learn More</button>
+                </div>
+
+                <!-- Mobile App Development -->
                 <div class="course-card">
                     <div class="course-icon">📲</div>
                     <h3>Mobile App Development</h3>
-                    <p>Create mobile applications for Android and iOS platforms.</p>
+                    <p>Create cross-platform mobile applications using modern frameworks.</p>
                     <div class="course-details">
-                        <p><strong>Level:</strong> Advanced</p>
+
                         <p><strong>Duration:</strong> 10 weeks</p>
                     </div>
-                    <!-- <button class="course-enroll-btn" onclick="openEnrollmentModal()">Enroll in this Course</button> -->
+                    <button class="learn-more-btn" onclick="openCourseModal('mobile-app-development')">Learn
+                        More</button>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="course-card">
+                    <div class="course-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Learn professional design skills using industry-standard tools.</p>
+                    <div class="course-details">
+
+                        <p><strong>Duration:</strong> 6 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('graphic-design')">Learn More</button>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">🗃️</div>
+                    <h3>Database Management</h3>
+                    <p>Master database design, SQL programming, and data management with MySQL and other database
+                        systems.</p>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 8 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('database-management')">Learn More</button>
+                </div>
+                <!-- Software Development -->
+                <div class="course-card">
+                    <div class="course-icon">⚙️</div>
+                    <h3>Software Development</h3>
+                    <p>Comprehensive software engineering principles and practices.</p>
+                    <div class="course-details">
+                        <p><strong>Duration:</strong> 14 weeks</p>
+                    </div>
+                    <button class="learn-more-btn" onclick="openCourseModal('software-development')">Learn More</button>
                 </div>
             </div>
+
         </section>
 
         <!-- Call to Action Section -->
@@ -97,7 +162,20 @@
             <a href="index.html" class="back-to-main-btn">Powerbec.org</a>
         </section>
     </div>
-
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content course-modal-content">
+            <div class="modal-header">
+                <h2 id="courseModalTitle">Course Details</h2>
+                <span class="close-btn" onclick="closeCourseModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="courseModalContent">
+                    <!-- Course content will be loaded here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Enrollment Modal -->
     <div id="enrollmentModal" class="modal">
         <div class="modal-content">
@@ -137,12 +215,17 @@
                         <label for="course">Select Course *</label>
                         <select id="course" name="course" class="form-control" required>
                             <option value="">Choose a course...</option>
-                            <option value="Digital Literacy Basics">Digital Literacy Basics</option>
+                            <option value="Computer Literacy">Computer Literacy</option>
                             <option value="Web Development">Web Development</option>
-                            <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Python Programming">Python Programming</option>
                             <option value="Data Analysis">Data Analysis</option>
+                            <option value="Data Science & Machine Learning">Data Science & Machine Learning</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
                             <option value="Mobile App Development">Mobile App Development</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Software Development">Software Development</option>
+                            <option value="Database Management">Database Management</option>
                         </select>
                     </div>
 
@@ -178,7 +261,7 @@
 
                     <div class="form-group">
                         <label for="message">Additional Information (Optional)</label>
-                        <textarea id="message" name="message" class="form-control" rows="3"
+                        <textarea id="message" name="message" class="form-control" rows="5"
                             placeholder="Tell us about your goals or any specific needs..."></textarea>
                     </div>
 
@@ -187,18 +270,24 @@
 
                     <button type="submit" class="submit-btn">Submit</button>
                 </form>
-                <div id="successMessage" class="form-message" style="display:none; text-align:center;">
-                    <p>🎉 Thank you for your enrollment!<br>We will contact you shortly.</p>
-
-                    <button type="button" class="submit-btn" onclick="closeEnrollmentModal()">
-                        Return to Page
-                    </button>
+                <!-- Success Message Container -->
+                <div id="successMessage" class="success-message" style="display:none;">
+                    <div class="success-icon">🎉</div>
+                    <h3>Enrollment Successful!</h3>
+                    <p>Thank you for your enrollment! We will contact you shortly with more details.</p>
+                    <div class="success-buttons">
+                        <button type="button" class="submit-btn success-btn" onclick="closeEnrollmentModal()">
+                            Return to Courses
+                        </button>
+                        <button type="button" class="submit-btn outline-btn" onclick="goToMainSite()">
+                            Back to Main Site
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="powbec.js"></script>
+        <script src="powbec.js"></script>
 </body>
 
 </html>
