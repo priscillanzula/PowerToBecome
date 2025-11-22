@@ -86,3 +86,7 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => {
   observer.observe(card);
 });
+document.getElementById("contactForm").addEventListener("submit", function () {
+    document.getElementById("contactForm").style.display = "none";
+    document.getElementById("contactSuccess").style.display = "block";
+});

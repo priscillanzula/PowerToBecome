@@ -2,7 +2,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const enrollmentForm = document.getElementById('enrollmentForm');
     const modal = document.getElementById('enrollmentModal');
+
+    // NEW — success message container (instead of using formMessage)
     const messageDiv = document.getElementById('formMessage');
+    const successDiv = document.getElementById('successMessage'); // Add this to HTML
 
     // Close modal when clicking outside
     window.onclick = function(event) {
@@ -23,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const formData = new FormData(this);
         const submitBtn = this.querySelector('.submit-btn');
-        
+
         // Validate form
         if (!validateForm(Object.fromEntries(formData))) {
             return;
@@ -33,23 +36,23 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.textContent = 'Submitting...';
         submitBtn.disabled = true;
         
-        // Submit form (using Formspree)
+        // Submit to Formspree
         fetch(this.action, {
             method: 'POST',
             body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
         })
         .then(response => {
             if (response.ok) {
-                showMessage('🎉 Thank you for your enrollment! We will contact you shortly with more details.', 'success');
+
+                // HIDE form
+                enrollmentForm.style.display = "none";
+
+                // SHOW success message + button
+                successDiv.style.display = "block";
+
                 enrollmentForm.reset();
-                
-                // Close modal after success
-                setTimeout(() => {
-                    closeEnrollmentModal();
-                }, 3000);
+
             } else {
                 throw new Error('Form submission failed');
             }
@@ -64,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function validateForm(data) {
-        // Basic validation
         if (data.age < 10 || data.age > 25) {
             showMessage('Please enter a valid age between 10 and 25 years.', 'error');
             return false;
@@ -82,32 +84,27 @@ document.addEventListener('DOMContentLoaded', function() {
         messageDiv.textContent = text;
         messageDiv.className = `form-message ${type}`;
         messageDiv.style.display = 'block';
-        
-        // Scroll to message
+
         messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        // Auto-hide success messages after 5 seconds
-        if (type === 'success') {
-            setTimeout(() => {
-                messageDiv.style.display = 'none';
-            }, 5000);
-        }
     }
 });
 
 // Modal functions
 function openEnrollmentModal() {
     const modal = document.getElementById('enrollmentModal');
+    const form = document.getElementById('enrollmentForm');
+    const success = document.getElementById('successMessage');
+
     modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+
+    // Reset view
+    form.style.display = 'block';
+    success.style.display = 'none';
 }
 
 function closeEnrollmentModal() {
     const modal = document.getElementById('enrollmentModal');
     modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
-    
-    // Reset form message
-    const messageDiv = document.getElementById('formMessage');
-    messageDiv.style.display = 'none';
+    document.body.style.overflow = 'auto';
 }

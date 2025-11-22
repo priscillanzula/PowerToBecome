@@ -14,7 +14,7 @@
         <header class="school-header">
             <h1>Powbec School</h1>
             <p>PowerCode.Become!</p>
-            <!-- <button class="enroll-cta-btn" onclick="openEnrollmentModal()">Enroll Now</button> -->
+            <a href="index.html" class="back-to-main-btn">Powerbec.org</a>
         </header>
 
         <!-- Courses Section -->
@@ -93,7 +93,8 @@
         <section class="bottom-cta">
             <h2>Ready to Start Your Digital Journey?</h2>
             <p>Join hundreds of rural youth who are transforming their lives through technology</p>
-            <button class="enroll-cta-btn large" onclick="openEnrollmentModal()">Enroll Now</button>
+            <button class="enroll-cta-btn large" onclick="openEnrollmentModal()">Enroll now</button>
+            <a href="index.html" class="back-to-main-btn">Powerbec.org</a>
         </section>
     </div>
 
@@ -124,7 +125,7 @@
 
                     <div class="form-group">
                         <label for="age">Age *</label>
-                        <input type="number" id="age" name="age" class="form-control" min="10" max="25" required>
+                        <input type="number" id="age" name="age" class="form-control" min="10" max="40" required>
                     </div>
 
                     <div class="form-group">
@@ -184,10 +185,15 @@
                     <input type="hidden" name="_subject" value="New PowBec School Enrollment">
                     <input type="hidden" name="_replyto" value="danielpriscilla61@gmail.com">
 
-                    <div id="formMessage" class="form-message"></div>
-
-                    <button type="submit" class="submit-btn">Submit Enrollment</button>
+                    <button type="submit" class="submit-btn">Submit</button>
                 </form>
+                <div id="successMessage" class="form-message" style="display:none; text-align:center;">
+                    <p>🎉 Thank you for your enrollment!<br>We will contact you shortly.</p>
+
+                    <button type="button" class="submit-btn" onclick="closeEnrollmentModal()">
+                        Return to Page
+                    </button>
+                </div>
             </div>
         </div>
     </div>

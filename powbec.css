@@ -42,7 +42,7 @@ body {
 .enroll-cta-btn {
     background: white;
     color: #667eea;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border: none;
     border-radius: 25px;
     font-size: 1.1rem;
@@ -54,14 +54,40 @@ body {
 
 .enroll-cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(208, 199, 22, 0.3);
 }
 
 .enroll-cta-btn.large {
-    padding: 15px 35px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+.back-to-main-btn {
+    color:  #667eea;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(208, 199, 22, 0.3);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: bold;
     font-size: 1.2rem;
 }
 
+.back-to-main-btn:hover {
+    background: white;
+    color: #667eea;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .header-buttons {
+        flex-direction: column;
+    }
+    
+    .back-to-main-btn {
+        margin-top: 1rem;
+    }
+}
 /* Courses Section */
 .courses-section {
     background: white;
